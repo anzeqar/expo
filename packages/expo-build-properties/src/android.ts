@@ -10,6 +10,10 @@ const { createBuildGradlePropsConfigPlugin } = AndroidConfig.BuildProperties;
 export const withAndroidBuildProperties = createBuildGradlePropsConfigPlugin<PluginConfigType>(
   [
     {
+      propName: 'newArchEnabled',
+      propValueGetter: (config) => config.android?.enableFabric?.toString(),
+    },
+    {
       propName: 'android.minSdkVersion',
       propValueGetter: (config) => config.android?.minSdkVersion?.toString(),
     },

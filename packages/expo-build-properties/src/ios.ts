@@ -7,6 +7,10 @@ const { createBuildPodfilePropsConfigPlugin } = IOSConfig.BuildProperties;
 export const withIosBuildProperties = createBuildPodfilePropsConfigPlugin<PluginConfigType>(
   [
     {
+      propName: 'expo.enableFabric',
+      propValueGetter: (config) => config.ios?.enableFabric?.toString(),
+    },
+    {
       propName: 'ios.useFrameworks',
       propValueGetter: (config) => config.ios?.useFrameworks,
     },

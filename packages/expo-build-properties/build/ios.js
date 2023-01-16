@@ -5,6 +5,10 @@ const config_plugins_1 = require("expo/config-plugins");
 const { createBuildPodfilePropsConfigPlugin } = config_plugins_1.IOSConfig.BuildProperties;
 exports.withIosBuildProperties = createBuildPodfilePropsConfigPlugin([
     {
+        propName: 'expo.enableFabric',
+        propValueGetter: (config) => config.ios?.enableFabric?.toString(),
+    },
+    {
         propName: 'ios.useFrameworks',
         propValueGetter: (config) => config.ios?.useFrameworks,
     },
